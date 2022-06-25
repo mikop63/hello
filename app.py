@@ -10,7 +10,7 @@ def do_something():
 
 def application(env, start_response):
     steart_response('200 OK', [('Content-Type', 'text/html')])
-    return(do_something())
+    return(do_something().encode())
 
 if __name__ == '__main__':
     if 'REQUEST_URI' in os.environ:
