@@ -8,6 +8,10 @@ def do_something():
     now = datetime.datetime.now()
     return f'Hello {now}'
 
+def application(env, start_response):
+    steart_response('200 OK', [('Content-Type', 'text/html')])
+    return(do_something())
+
 if __name__ == '__main__':
     if 'REQUEST_URI' in os.environ:
         print('Content-type: text/html\n\n')
